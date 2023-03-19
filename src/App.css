@@ -1,38 +1,155 @@
 .App {
+  margin: 20px;
+}
+
+.head>.title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+  color: #4d4d4d;
+}
+
+.headBtn {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headBtn>.headBtnTitle {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #545454;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headBtn>.btns {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 4px;
+  border-radius: 12px;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.headBtn>.btns>.active {
+  border-radius: 8px;
+  background-color: white;
+  color: #4d4d4d;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headBtn>.btns>div {
+  font-size: 16px;
+  width: 50%;
+  padding: 6px 5px;
+  line-height: 20px;
+  border: 0;
+  color: #888888;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s ease color;
+}
+
+.ItemGroups {
+  padding-top: 10px;
+}
+
+.ItemGroups.all>div {
+  display: flex;
+}
+
+.ItemGroup {
+  padding: 0 5px;
+  transition: 0.1s ease all;
+  user-select: none;
+  cursor: pointer;
+}
+
+.ItemGroup>.titleBlock {
+  display: flex;
+  align-items: center;
+}
+
+.ItemGroup>.titleBlock>.title {
+  padding: 5px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.ItemGroup>.titleBlock:hover>.title {
+  background-color: #f3f3f3;
+}
+
+.ItemGroup.active {
+  background-color: #f3f3f37a;
+  border: 1px solid #00000014;
+  border-radius: 5px;
+  transition: 0.1s ease all;
+}
+
+.ItemGroup>.items {
+  display: none;
+  padding: 5px;
+  padding-left: 27px;
+}
+
+
+.ItemGroup.active>.items {
+  display: block;
+}
+
+.ItemGroup>.items>div {
+  display: flex;
+  width: 93%;
+  align-items: center;
+}
+
+.ItemGroups.all>div>p,.ItemGroup>.items>div>p {
+  margin: 0;
+  height: 1.2em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 254px;
+}
+
+.check {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #4d4d4d;
+  border-radius: 4px;
+  margin-right: 3px;
+  transition: 0.1s ease opacity;
+  min-width: 12px;
+  min-height: 12px;
+}
+
+.check.active {
+  background-image: url(./icons/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.cross {
+  display: block;
+  height: 21px;
+  width: 21px;
+  position: absolute;
+  right: 28px;
+
+  -webkit-mask: url(./icons/cross.svg);
+  mask: url(./icons/cross.svg);
+  background-color: #ff000099;
+  cursor: pointer;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.cross:hover {
+  background-color: red;
 }
